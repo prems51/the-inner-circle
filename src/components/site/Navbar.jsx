@@ -1,14 +1,19 @@
 import { useEffect, useState } from "react";
-import { Menu, X, TrendingUp } from "lucide-react";
+import { Menu, X, CandlestickChart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const links = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#industries", label: "Industries" },
-  { href: "#contact", label: "Contact" },
+  { href: "#benefits", label: "Benefits" },
+  { href: "#journey", label: "Journey" },
+  { href: "#testimonials", label: "Testimonials" },
+  { href: "#pricing", label: "Pricing" },
+  { href: "#why", label: "Why Us" },
+  { href: "#team", label: "Team" },
+  { href: "#faq", label: "FAQ" },
 ];
+
+const DISCORD_URL = "https://discord.com";
+const WHOP_URL = "https://whop.com";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -21,51 +26,50 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleClick = (e, href) => {
-    e.preventDefault();
-    setOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-primary/95 backdrop-blur-md shadow-soft" : "bg-transparent"
+        scrolled ? "glass shadow-soft border-b border-border/50" : "bg-transparent"
       }`}
     >
-      <div className="container-tight flex h-18 items-center justify-between py-4">
-        <a href="#home" onClick={(e) => handleClick(e, "#home")} className="flex items-center gap-2 group">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-gold shadow-gold-glow">
-            <TrendingUp className="h-5 w-5 text-primary" strokeWidth={2.5} />
+      <div className="container-tight flex h-16 items-center justify-between">
+        <a href="#home" onClick={() => setOpen(false)} className="flex items-center gap-2 group">
+          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-primary shadow-glow">
+            <CandlestickChart className="h-5 w-5 text-primary-foreground" strokeWidth={2.5} />
           </span>
-          <span className="font-display text-lg font-bold text-primary-foreground">Lathyrus</span>
+          <span className="font-display text-lg font-extrabold text-foreground">TD Trade</span>
         </a>
 
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-7">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              onClick={(e) => handleClick(e, l.href)}
-              className="relative text-sm font-medium text-primary-foreground/80 transition-colors hover:text-accent after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-accent after:transition-all hover:after:w-full"
+              className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
             >
               {l.label}
             </a>
           ))}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden lg:flex items-center gap-2">
           <Button
-            onClick={(e) => handleClick(e, "#contact")}
-            className="bg-gradient-gold text-primary font-semibold shadow-gold-glow hover:opacity-90 transition-opacity"
+            asChild
+            variant="ghost"
+            className="text-foreground/80 hover:text-foreground hover:bg-secondary"
           >
-            Get in Touch
+            <a href={DISCORD_URL} target="_blank" rel="noopener noreferrer">Discord</a>
+          </Button>
+          <Button
+            asChild
+            className="bg-gradient-primary text-primary-foreground font-semibold shadow-glow hover:opacity-95 transition-opacity"
+          >
+            <a href={WHOP_URL} target="_blank" rel="noopener noreferrer">Join</a>
           </Button>
         </div>
 
         <button
-          className="lg:hidden p-2 text-primary-foreground"
+          className="lg:hidden p-2 text-foreground"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
         >
@@ -74,23 +78,31 @@ const Navbar = () => {
       </div>
 
       {open && (
-        <div className="lg:hidden bg-primary border-t border-primary-glow animate-fade-in">
+        <div className="lg:hidden glass border-t border-border/50 animate-fade-in">
           <div className="container-tight flex flex-col gap-1 py-4">
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                onClick={(e) => handleClick(e, l.href)}
-                className="rounded-md px-3 py-3 text-sm font-medium text-primary-foreground/90 hover:bg-primary-glow hover:text-accent"
+                onClick={() => setOpen(false)}
+                className="rounded-md px-3 py-3 text-sm font-medium text-foreground/80 hover:bg-secondary"
               >
                 {l.label}
               </a>
             ))}
-            <Button
-              onClick={(e) => handleClick(e, "#contact")}
-              className="mt-2 bg-gradient-gold text-primary font-semibold"
+            <a
+              href={DISCORD_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-md px-3 py-3 text-sm font-medium text-foreground/80 hover:bg-secondary"
             >
-              Get in Touch
+              Discord
+            </a>
+            <Button
+              asChild
+              className="mt-2 bg-gradient-primary text-primary-foreground font-semibold"
+            >
+              <a href={WHOP_URL} target="_blank" rel="noopener noreferrer">Join</a>
             </Button>
           </div>
         </div>

@@ -1,34 +1,22 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, PlayCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedDashboard from "./AnimatedDashboard";
 
+const WHOP_URL = "https://whop.com";
+const DISCORD_URL = "https://discord.com";
+
 const Hero = () => {
   const reduce = useReducedMotion();
-  const handle = (href) => (e) => {
-    e.preventDefault();
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-gradient-navy text-primary-foreground pt-32 pb-24 lg:pt-40 lg:pb-32"
+      className="relative overflow-hidden bg-gradient-hero pt-32 pb-24 lg:pt-40 lg:pb-32"
     >
-      {/* Decorative glow */}
-      <div className="absolute -top-32 -right-32 h-[480px] w-[480px] rounded-full bg-accent/10 blur-3xl" aria-hidden />
-      <div className="absolute -bottom-32 -left-32 h-[480px] w-[480px] rounded-full bg-primary-glow/40 blur-3xl" aria-hidden />
-
-      {/* Subtle grid */}
-      <div
-        className="absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            "linear-gradient(hsl(var(--primary-foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary-foreground)) 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
-        }}
-        aria-hidden
-      />
+      <div className="absolute inset-0 bg-mesh" aria-hidden />
+      <div className="absolute -top-32 -right-32 h-[480px] w-[480px] rounded-full bg-primary/10 blur-3xl" aria-hidden />
+      <div className="absolute -bottom-32 -left-32 h-[480px] w-[480px] rounded-full bg-accent/10 blur-3xl" aria-hidden />
 
       <div className="container-tight relative grid gap-14 lg:grid-cols-2 lg:gap-12 items-center">
         <motion.div
@@ -36,55 +24,58 @@ const Hero = () => {
           animate={reduce ? false : { opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-foreground/15 bg-primary-foreground/5 px-4 py-1.5 backdrop-blur">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card/70 backdrop-blur px-4 py-1.5 shadow-soft">
             <span className="h-1.5 w-1.5 rounded-full bg-accent animate-ticker-pulse" />
-            <span className="text-xs font-medium tracking-wide text-primary-foreground/80">
-              Trusted globally since 2008
+            <span className="text-xs font-medium tracking-wide text-foreground/70">
+              Live trading community · 5,000+ members
             </span>
           </div>
 
-          <h1 className="font-display text-4xl font-bold leading-[1.05] sm:text-5xl lg:text-6xl xl:text-[64px]">
-            Trading Excellence{" "}
-            <span className="text-gradient-gold">Across Global Markets</span>
+          <h1 className="font-display text-4xl font-extrabold leading-[1.05] sm:text-5xl lg:text-6xl xl:text-[64px] text-foreground">
+            Learn to trade,{" "}
+            <span className="text-gradient-primary">live with the pros</span>
           </h1>
 
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-primary-foreground/75 sm:text-lg">
-            Lathyrus connects producers, manufacturers and buyers across 42 countries — delivering metals, agricultural
-            commodities, energy and industrial supplies with transparent pricing and uncompromising reliability.
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            TD Trade is a community-driven education platform where you learn indices and commodities
+            through daily live sessions, structured courses, and traders who actually trade.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-4">
+          <div className="mt-8 flex flex-wrap items-center gap-3">
             <Button
+              asChild
               size="lg"
-              onClick={handle("#contact")}
-              className="bg-gradient-gold text-primary font-semibold shadow-gold-glow hover:opacity-90 group h-12 px-7"
+              className="bg-gradient-primary text-primary-foreground font-semibold shadow-glow hover:opacity-95 group h-12 px-7"
             >
-              Start Trading
-              <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <a href={WHOP_URL} target="_blank" rel="noopener noreferrer">
+                Join TD Trade
+                <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
             </Button>
             <Button
+              asChild
               size="lg"
               variant="outline"
-              onClick={handle("#services")}
-              className="h-12 px-6 border-primary-foreground/25 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+              className="h-12 px-6 border-border bg-card hover:bg-secondary"
             >
-              <PlayCircle className="mr-1 h-4 w-4" />
-              Explore Services
+              <a href={DISCORD_URL} target="_blank" rel="noopener noreferrer">
+                Join Discord
+              </a>
             </Button>
           </div>
 
-          <div className="mt-12 grid grid-cols-3 gap-6 max-w-md border-t border-primary-foreground/10 pt-6">
+          <div className="mt-12 grid grid-cols-3 gap-6 max-w-md border-t border-border pt-6">
             <div>
-              <p className="font-display text-2xl font-bold text-accent">17+</p>
-              <p className="text-xs text-primary-foreground/60 mt-1">Years of Trade</p>
+              <p className="font-display text-2xl font-extrabold text-gradient-primary">5K+</p>
+              <p className="text-xs text-muted-foreground mt-1">Active members</p>
             </div>
             <div>
-              <p className="font-display text-2xl font-bold text-accent">42</p>
-              <p className="text-xs text-primary-foreground/60 mt-1">Countries Served</p>
+              <p className="font-display text-2xl font-extrabold text-gradient-primary">250+</p>
+              <p className="text-xs text-muted-foreground mt-1">Live sessions / yr</p>
             </div>
             <div>
-              <p className="font-display text-2xl font-bold text-accent">800+</p>
-              <p className="text-xs text-primary-foreground/60 mt-1">Global Partners</p>
+              <p className="font-display text-2xl font-extrabold text-gradient-primary">4.9★</p>
+              <p className="text-xs text-muted-foreground mt-1">Member rating</p>
             </div>
           </div>
         </motion.div>
