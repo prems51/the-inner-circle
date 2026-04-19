@@ -6,7 +6,7 @@ import Journey from "./Journey";
 import Testimonials from "./Testimonials";
 import Pricing from "./Pricing";
 import WhyUs from "./WhyUs";
-import Team from "./Team";
+// import Team from "./Team";
 import FAQ from "./FAQ";
 import CTABanner from "./CTABanner";
 import Footer from "./Footer";
@@ -23,7 +23,7 @@ const LandingPage = () => {
         <Testimonials />
         <Pricing />
         <WhyUs />
-        <Team />
+        {/* <Team /> */}
         <FAQ />
         <CTABanner />
       </main>
