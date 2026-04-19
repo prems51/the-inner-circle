@@ -1,60 +1,65 @@
-import { motion, useReducedMotion } from "framer-motion";
-import { Quote } from "lucide-react";
+import { Star } from "lucide-react";
 import Section from "./Section";
 
-const testimonials = [
-  {
-    quote:
-      "Lathyrus has become an extension of our procurement team. Their market visibility and execution discipline are genuinely best-in-class.",
-    name: "Amelia Chen",
-    role: "Head of Procurement",
-    company: "Nordsteel Industries",
-  },
-  {
-    quote:
-      "We needed a partner who could move volume reliably across three continents. Two years in, every shipment has landed on spec and on time.",
-    name: "Rajiv Mehta",
-    role: "Supply Chain Director",
-    company: "Agricorp Global",
-  },
-  {
-    quote:
-      "Transparent pricing, real expertise, and a team that picks up the phone. That combination is rarer than it should be in this industry.",
-    name: "Sophie Laurent",
-    role: "Managing Director",
-    company: "Meridian Trading",
-  },
+const reviews = [
+  { name: "Alex P.", role: "Member · 1 yr", text: "The live sessions completely changed how I read the market. Worth every cent.", rating: 5 },
+  { name: "Maya R.", role: "Member · 8 mo", text: "I finally have a process I trust. The mentors actually trade and it shows.", rating: 5 },
+  { name: "Jordan K.", role: "Member · 2 yr", text: "The community is incredible — sharp traders, no ego, real feedback every day.", rating: 5 },
+  { name: "Sara L.", role: "Member · 6 mo", text: "Went from blowing accounts to consistent green months in under a year.", rating: 5 },
+  { name: "Rohit S.", role: "Member · 1 yr", text: "The structured courses made everything click. Best decision I've made.", rating: 5 },
+  { name: "Emma D.", role: "Member · 3 mo", text: "I love how transparent the instructors are about losses and process.", rating: 5 },
+  { name: "Liam T.", role: "Member · 9 mo", text: "Daily live trading is the secret. You see real decisions in real time.", rating: 5 },
+  { name: "Nora B.", role: "Member · 1 yr", text: "Felt at home from day one. The Discord alone is worth the membership.", rating: 5 },
 ];
 
+const Card = ({ r }) => (
+  <div className="w-[320px] sm:w-[360px] flex-shrink-0 rounded-2xl bg-card border border-border p-6 shadow-soft">
+    <div className="flex items-center gap-1 text-accent mb-3">
+      {Array.from({ length: r.rating }).map((_, i) => (
+        <Star key={i} className="h-4 w-4 fill-current" />
+      ))}
+    </div>
+    <p className="text-sm leading-relaxed text-foreground/85">"{r.text}"</p>
+    <div className="mt-5 pt-4 border-t border-border flex items-center gap-3">
+      <div className="h-9 w-9 rounded-full bg-gradient-primary text-primary-foreground flex items-center justify-center font-display text-sm font-bold">
+        {r.name.charAt(0)}
+      </div>
+      <div>
+        <p className="font-semibold text-sm text-foreground">{r.name}</p>
+        <p className="text-xs text-muted-foreground">{r.role}</p>
+      </div>
+    </div>
+  </div>
+);
+
+const Row = ({ items, reverse = false }) => (
+  <div className="marquee-pause overflow-hidden">
+    <div
+      className="marquee-track flex gap-5 w-max"
+      style={reverse ? { animationDirection: "reverse" } : undefined}
+    >
+      {[...items, ...items].map((r, i) => (
+        <Card key={i} r={r} />
+      ))}
+    </div>
+  </div>
+);
+
 const Testimonials = () => {
-  const reduce = useReducedMotion();
+  const half = Math.ceil(reviews.length / 2);
   return (
     <Section
-      eyebrow="Client Voices"
-      title="Trusted by partners that demand performance"
-      subtitle="Long-term relationships built on consistent execution — here's what some of them say."
+      id="testimonials"
+      eyebrow="Member Voices"
+      title="Loved by traders, every day"
+      subtitle="Real reviews from the TD Trade community."
       center
     >
-      <div className="grid gap-6 lg:grid-cols-3">
-        {testimonials.map((t, i) => (
-          <motion.figure
-            key={t.name}
-            initial={reduce ? false : { opacity: 0, y: 20 }}
-            whileInView={reduce ? false : { opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="relative rounded-2xl bg-card p-7 border border-border/70 shadow-soft hover:shadow-elegant transition-shadow"
-          >
-            <Quote className="h-9 w-9 text-accent/30 absolute top-5 right-5" />
-            <blockquote className="text-base leading-relaxed text-foreground/85">"{t.quote}"</blockquote>
-            <figcaption className="mt-6 pt-5 border-t border-border">
-              <p className="font-display font-semibold text-foreground">{t.name}</p>
-              <p className="text-sm text-muted-foreground mt-0.5">
-                {t.role} · <span className="text-accent">{t.company}</span>
-              </p>
-            </figcaption>
-          </motion.figure>
-        ))}
+      <div className="relative -mx-6 lg:-mx-8 space-y-5">
+        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+        <Row items={reviews.slice(0, half)} />
+        <Row items={reviews.slice(half)} reverse />
       </div>
     </Section>
   );
