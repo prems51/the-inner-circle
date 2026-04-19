@@ -52,7 +52,7 @@ const Testimonials = () => {
       id="testimonials"
       eyebrow="Member Voices"
       title="Loved by traders, every day"
-      subtitle="Real reviews from the TD Trade community."
+      subtitle="Real reviews from the The Inner Circle community."
       center
     >
       <div className="relative -mx-6 lg:-mx-8 space-y-5">

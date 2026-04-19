@@ -37,7 +37,7 @@ const Navbar = () => {
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-primary shadow-glow">
             <CandlestickChart className="h-5 w-5 text-primary-foreground" strokeWidth={2.5} />
           </span>
-          <span className="font-display text-lg font-extrabold text-foreground">TD Trade</span>
+          <span className="font-display text-lg font-extrabold text-foreground">The Inner Circle</span>
         </a>
 
         <nav className="hidden lg:flex items-center gap-7">

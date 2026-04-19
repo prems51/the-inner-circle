@@ -37,7 +37,7 @@ const Hero = () => {
           </h1>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            TD Trade is a community-driven education platform where you learn indices and commodities
+            The Inner Circle is a community-driven education platform where you learn indices and commodities
             through daily live sessions, structured courses, and traders who actually trade.
           </p>
 
@@ -48,7 +48,7 @@ const Hero = () => {
               className="bg-gradient-primary text-primary-foreground font-semibold shadow-glow hover:opacity-95 group h-12 px-7"
             >
               <a href={WHOP_URL} target="_blank" rel="noopener noreferrer">
-                Join TD Trade
+                Join The Inner Circle
                 <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>

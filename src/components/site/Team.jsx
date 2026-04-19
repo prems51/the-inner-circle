@@ -36,7 +36,7 @@ const Team = () => {
       id="team"
       eyebrow="The Team"
       title="Traders teaching what they live"
-      subtitle="A small team of active traders, mentors and educators behind TD Trade."
+      subtitle="A small team of active traders, mentors and educators behind The Inner Circle."
       center
     >
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

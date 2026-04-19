@@ -25,7 +25,7 @@ const WhyUs = () => {
   return (
     <Section
       id="why"
-      eyebrow="Why TD Trade"
+      eyebrow="Why The Inner Circle"
       title="A smarter way to learn"
       subtitle="Turn complex market behavior into clear insights that help you make better decisions, faster."
       center
@@ -60,7 +60,7 @@ const WhyUs = () => {
           className="relative rounded-2xl bg-gradient-primary text-primary-foreground p-7 shadow-elegant overflow-hidden"
         >
           <div className="absolute -top-20 -right-20 h-56 w-56 rounded-full bg-primary-foreground/10 blur-3xl" aria-hidden />
-          <p className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/70">TD Trade</p>
+          <p className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/70">The Inner Circle</p>
           <h3 className="font-display text-xl font-bold mt-1">Built by active traders</h3>
           <ul className="mt-6 space-y-4 relative">
             {tdtrade.map((t) => (

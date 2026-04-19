@@ -24,7 +24,7 @@ const CTABanner = () => (
               className="bg-primary-foreground text-primary font-semibold hover:bg-primary-foreground/90 h-12 px-7 group"
             >
               <a href={WHOP_URL} target="_blank" rel="noopener noreferrer">
-                Join TD Trade
+                Join The Inner Circle
                 <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>

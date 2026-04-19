@@ -3,12 +3,12 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 const faqs = [
   {
-    q: "What is TD Trade?",
-    a: "TD Trade is a trading community and educational platform dedicated to helping traders grow their knowledge, refine their skills, and achieve consistency in the markets.",
+    q: "What is The Inner Circle?",
+    a: "The Inner Circle is a trading community and educational platform dedicated to helping traders grow their knowledge, refine their skills, and achieve consistency in the markets.",
   },
   {
     q: "What level of trading experience is required to join?",
-    a: "No prior experience is necessary. TD Trade welcomes traders of all levels — from complete beginners to seasoned professionals. Our resources are designed to educate, support and challenge you at every stage of your trading journey.",
+    a: "No prior experience is necessary. The Inner Circle welcomes traders of all levels — from complete beginners to seasoned professionals. Our resources are designed to educate, support and challenge you at every stage of your trading journey.",
   },
   {
     q: "What markets do you focus on?",
@@ -29,7 +29,7 @@ const FAQ = () => (
     id="faq"
     eyebrow="FAQ"
     title="Frequently asked questions"
-    subtitle="Everything you need to know before joining TD Trade."
+    subtitle="Everything you need to know before joining The Inner Circle."
     center
   >
     <div className="max-w-2xl mx-auto">

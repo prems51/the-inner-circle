@@ -12,7 +12,7 @@ const Footer = () => (
             <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-primary shadow-glow">
               <CandlestickChart className="h-5 w-5 text-primary-foreground" strokeWidth={2.5} />
             </span>
-            <span className="font-display text-lg font-extrabold text-foreground">TD Trade</span>
+            <span className="font-display text-lg font-extrabold text-foreground">The Inner Circle</span>
           </a>
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground max-w-xs">
             A trading community and education platform. Daily live sessions, structured courses, and traders who actually trade.
@@ -87,7 +87,7 @@ const Footer = () => (
 
     <div className="border-t border-border">
       <div className="container-tight flex flex-col sm:flex-row items-center justify-between gap-3 py-6 text-xs text-muted-foreground">
-        <p>© {new Date().getFullYear()} TD Trade. Trading involves risk. Past performance is not indicative of future results.</p>
+        <p>© {new Date().getFullYear()} The Inner Circle. Trading involves risk. Past performance is not indicative of future results.</p>
         <p>Built for traders, by traders.</p>
       </div>
     </div>
