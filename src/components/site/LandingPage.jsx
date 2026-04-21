@@ -4,6 +4,7 @@ import Hero from "./Hero";
 import Partners from "./Partners";
 import Benefits from "./Benefits";
 import Journey from "./Journey";
+import Socials from "./Socials";
 import Testimonials from "./Testimonials";
 import Pricing from "./Pricing";
 import WhyUs from "./WhyUs";
@@ -22,6 +23,7 @@ const LandingPage = () => {
         <Partners />
         <Benefits />
         <Journey />
+        <Socials />
         <Testimonials />
         <Pricing />
         <WhyUs />
