@@ -1,6 +1,7 @@
 import useLenis from "@/hooks/useLenis";
 import Navbar from "./Navbar";
 import Hero from "./Hero";
+import Partners from "./Partners";
 import Benefits from "./Benefits";
 import Journey from "./Journey";
 import Testimonials from "./Testimonials";
@@ -18,6 +19,7 @@ const LandingPage = () => {
       <Navbar />
       <main>
         <Hero />
+        <Partners />
         <Benefits />
         <Journey />
         <Testimonials />
