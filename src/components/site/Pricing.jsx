@@ -3,8 +3,10 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Section from "./Section";
+import social from "@/lib/utils";
 
-const WHOP_URL = "https://whop.com";
+const WHOP_URL1 = social.innercirclepremium;
+const WHOP_URL2 = social.innercirclepremiumlifetime;
 
 const features = [
   "Daily live trading sessions",
@@ -19,19 +21,19 @@ const plans = [
   {
     id: "monthly",
     name: "Monthly",
-    price: 79,
+    price: 75,
     period: "/month",
     note: "Billed monthly · cancel anytime",
     highlight: false,
   },
   {
-    id: "quarterly",
-    name: "Quarterly",
-    price: 59,
-    period: "/month",
-    note: "Billed $177 every 3 months · save 25%",
+    id: "lifetime",
+    name: "Lifetime",
+    price: 497,
+    period: "One Time Payment",
+    note: "Billed once· save more",
     highlight: true,
-    badge: "Most popular",
+    badge: "Most Popular",
   },
 ];
 
@@ -84,7 +86,7 @@ const Pricing = () => {
                     : "bg-secondary text-foreground hover:bg-secondary/80"
                 }`}
               >
-                <a href={WHOP_URL} target="_blank" rel="noopener noreferrer">Join now</a>
+                <a href={p.id === "monthly" ? WHOP_URL1 : WHOP_URL2} target="_blank" rel="noopener noreferrer">Join now</a>
               </Button>
 
               <ul className="mt-7 space-y-3">

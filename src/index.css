@@ -179,7 +179,7 @@
 
   /* Marquee */
   .marquee-track {
-    animation: marquee 40s linear infinite;
+    animation: marquee 30s linear infinite;
   }
   .marquee-pause:hover .marquee-track {
     animation-play-state: paused;

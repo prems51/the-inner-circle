@@ -1,8 +1,9 @@
 import { ArrowRight, MessagesSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import socials from "@/lib/utils";
 
-const WHOP_URL = "https://whop.com";
-const DISCORD_URL = "https://discord.com";
+const WHOP_URL = socials.innercirclepremium;
+const DISCORD_URL = socials.discord;
 
 const CTABanner = () => (
   <section className="py-20 lg:py-24">

@@ -1,7 +1,9 @@
 import { CandlestickChart, Twitter, Instagram, Youtube, MessagesSquare } from "lucide-react";
+import socials from "@/lib/utils";
 
-const DISCORD_URL = "https://discord.com";
-const WHOP_URL = "https://whop.com";
+const DISCORD_URL = socials.discord;
+const WHOP_URL = socials.innercirclepremium;
+
 
 const Footer = () => (
   <footer className="bg-card border-t border-border">
@@ -17,7 +19,7 @@ const Footer = () => (
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground max-w-xs">
             A trading community and education platform. Daily live sessions, structured courses, and traders who actually trade.
           </p>
-          <div className="mt-5 flex items-center gap-2">
+          {/* <div className="mt-5 flex items-center gap-2">
             {[
               { Icon: MessagesSquare, href: DISCORD_URL, label: "Discord" },
               { Icon: Twitter, href: "#", label: "Twitter" },
@@ -35,7 +37,7 @@ const Footer = () => (
                 <Icon className="h-4 w-4" />
               </a>
             ))}
-          </div>
+          </div> */}
         </div>
 
         <div>
@@ -68,7 +70,7 @@ const Footer = () => (
                 Join via Whop
               </a>
             </li>
-            <li><a href="#team" className="text-muted-foreground hover:text-foreground transition-colors">Team</a></li>
+            {/* <li><a href="#team" className="text-muted-foreground hover:text-foreground transition-colors">Team</a></li> */}
             <li><a href="#faq" className="text-muted-foreground hover:text-foreground transition-colors">FAQ</a></li>
           </ul>
         </div>

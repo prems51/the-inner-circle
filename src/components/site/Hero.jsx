@@ -2,9 +2,10 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedDashboard from "./AnimatedDashboard";
+import socials from "@/lib/utils";
 
-const WHOP_URL = "https://whop.com";
-const DISCORD_URL = "https://discord.com";
+const WHOP_URL = socials.innercirclepremium;
+const DISCORD_URL = socials.discord;
 
 const Hero = () => {
   const reduce = useReducedMotion();
@@ -32,13 +33,12 @@ const Hero = () => {
           </div>
 
           <h1 className="font-display text-4xl font-extrabold leading-[1.05] sm:text-5xl lg:text-6xl xl:text-[64px] text-foreground">
-            Learn to trade,{" "}
-            <span className="text-gradient-primary">live with the pros</span>
+            Simplifying Your{" "}
+            <span className="text-gradient-primary">Trading Journey</span>
           </h1>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            The Inner Circle is a community-driven education platform where you learn indices and commodities
-            through daily live sessions, structured courses, and traders who actually trade.
+            Join TMTrading - Sign up and gain access to our trading mentorship platform.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">

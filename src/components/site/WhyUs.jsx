@@ -3,21 +3,19 @@ import { Check, X } from "lucide-react";
 import Section from "./Section";
 
 const others = [
-  "Little to no real-time breakdown",
-  "Pre-recorded content with no updates",
-  "No clear learning progression",
-  "Cherry-picked examples only",
-  "Surface-level explanations",
-  "Instructors who don't actively trade",
+  "No real-time execution",
+  "Hidden losses",
+  "No clear learning roadmap",
+  "Innactive community",
+  "No psychological support",
 ];
 
 const tdtrade = [
-  "Real-time live trading every session",
-  "Continuously updated curriculum",
-  "Insights tailored to your goals",
-  "Transparent decision-making process",
-  "Wins and losses shown openly",
-  "Instructors who trade their own capital",
+  "Real-time execution",
+  "No hidden losses",
+  "Clear learning roadmap",
+  "Active community 24/7",
+  "Psychological classes",
 ];
 
 const WhyUs = () => {

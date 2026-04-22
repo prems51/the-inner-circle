@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X, CandlestickChart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import socials from "@/lib/utils"
 
 const links = [
   { href: "#benefits", label: "Benefits" },
@@ -12,8 +13,8 @@ const links = [
   { href: "#faq", label: "FAQ" },
 ];
 
-const DISCORD_URL = "https://discord.com";
-const WHOP_URL = "https://whop.com";
+const DISCORD_URL = socials.discord;
+const WHOP_URL = socials.innercirclepremium;
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -34,9 +35,7 @@ const Navbar = () => {
     >
       <div className="container-tight flex h-16 items-center justify-between">
         <a href="#home" onClick={() => setOpen(false)} className="flex items-center gap-2 group">
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-primary shadow-glow">
-            <CandlestickChart className="h-5 w-5 text-primary-foreground" strokeWidth={2.5} />
-          </span>
+          <img src="./tmLogo.png" alt="logo" className="w-[45px] rounded-md" />
           <span className="font-display text-lg font-extrabold text-foreground">The Inner Circle</span>
         </a>
 

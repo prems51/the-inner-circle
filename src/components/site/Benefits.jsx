@@ -1,14 +1,14 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { Radio, GraduationCap, Users, LineChart, MessagesSquare, ShieldCheck } from "lucide-react";
+import { Radio, GraduationCap, Waypoints, LineChart, MessagesSquare, ShieldCheck } from "lucide-react";
 import Section from "./Section";
 
 const items = [
-  { icon: Radio, title: "Daily live trading", desc: "Trade alongside instructors in real time, every market session." },
-  { icon: GraduationCap, title: "Structured courses", desc: "Step-by-step paths from beginner foundations to advanced strategy." },
-  { icon: LineChart, title: "Real-time analysis", desc: "Live setups, levels and trade breakdowns as the market moves." },
-  { icon: MessagesSquare, title: "Active community", desc: "A Discord full of traders sharing ideas, charts and feedback." },
-  { icon: Users, title: "Mentor access", desc: "Direct Q&A with instructors who actively trade their own capital." },
-  { icon: ShieldCheck, title: "Risk-first mindset", desc: "Learn position sizing and risk management before chasing returns." },
+  { icon: Radio, title: "Live trading", desc: "Trade with instructors in real time, every market session." },
+  { icon: GraduationCap, title: "Full bootcamp", desc: "Step-by-step paths from beginner foundations to advanced strategy." },
+  { icon: LineChart, title: "Clear levels + Execution", desc: "We provide clear supply and demand levels along with precise entry, take profit, and stop loss points." },
+  { icon: Waypoints, title: "Roadmap", desc: "Follow a clear roadmap with step-by-step lessons and resources to track your progress" },
+  { icon: MessagesSquare, title: "Active community", desc: "Join our Discord full of traders sharing ideas, charts and feedback." },
+  { icon: ShieldCheck, title: "24/7 Access", desc: "Access all our resources, recordings, and courses anytime, anywhere." },
 ];
 
 const Benefits = () => {
