@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import socials from "@/lib/utils"
 
 const links = [
-  { href: "#benefits", label: "Benefits" },
+  { href: "#benefits", label: "Gains" },
   { href: "#journey", label: "Journey" },
   { href: "#testimonials", label: "Testimonials" },
   { href: "#pricing", label: "Pricing" },
@@ -36,7 +36,7 @@ const Navbar = () => {
       <div className="container-tight flex h-16 items-center justify-between">
         <a href="#home" onClick={() => setOpen(false)} className="flex items-center gap-2 group">
           <img src="./tmLogo.png" alt="logo" className="w-[45px] rounded-md" />
-          <span className="font-display text-lg font-extrabold text-foreground">The Inner Circle</span>
+          <span className="font-display text-lg font-extrabold text-foreground">TMT Trading</span>
         </a>
 
         <nav className="hidden lg:flex items-center gap-7">

@@ -3,11 +3,11 @@ import { Rocket, BookOpen, Radio, Target, TrendingUp } from "lucide-react";
 import Section from "./Section";
 
 const steps = [
-  { n: "01", icon: Rocket, title: "Join the community", desc: "Pick a plan and get instant access to Discord, courses and live rooms." },
-  { n: "02", icon: BookOpen, title: "Learn the foundations", desc: "Structured lessons on price action, risk and execution." },
-  { n: "03", icon: Radio, title: "Sit in on live sessions", desc: "Watch instructors trade indices and commodities in real time." },
-  { n: "04", icon: Target, title: "Build your edge", desc: "Develop your own playbook with mentor feedback." },
-  { n: "05", icon: TrendingUp, title: "Trade with consistency", desc: "Apply a tested process backed by a community that trades." },
+  { n: "01", icon: TrendingUp, title: "Trade with consistency", desc: "Apply a tested process backed by a community that trades." },
+  { n: "02", icon: Radio, title: "Sit in on live sessions", desc: "Watch live trade indices and commodities in real time." },
+  { n: "03", icon: Target, title: "Build your edge", desc: "Develop your T model strategy with mentor" },
+  { n: "04", icon: BookOpen, title: "Charting sessions", desc: "Weekly Sunday charting session and aslo analyzed the market for the entire week" },
+  { n: "05", icon: Rocket, title: "Build Psychology", desc: "3 to 4 Psychology classes in a week and  Full Psychology Bootcamp (20 video modules)" },
 ];
 
 const Journey = () => {
@@ -17,7 +17,7 @@ const Journey = () => {
     <Section
       id="journey"
       eyebrow="Your Journey"
-      title="From day one to consistent trader"
+      title="From day one to consistent trader in the INC"
       subtitle="A clear path that meets you wherever you are and takes you further."
       center
     >
@@ -60,20 +60,21 @@ const Journey = () => {
                 className="relative pl-20 md:pl-0 md:pt-20"
               >
                 {/* Node dot on the rail */}
-                <motion.div
-                  initial={reduce ? false : { scale: 0, opacity: 0 }}
-                  whileInView={reduce ? false : { scale: 1, opacity: 1 }}
-                  viewport={{ once: true, margin: "-60px" }}
-                  transition={{ duration: 0.4, delay: 0.15 + i * 0.18, type: "spring", stiffness: 200 }}
-                  className="absolute md:left-1/2 md:-translate-x-1/2 md:top-0 left-0 top-2"
-                >
-                  <div className="relative">
-                    <div className="absolute inset-0 rounded-2xl bg-gradient-primary blur-lg opacity-50" />
-                    <div className="relative h-16 w-16 rounded-2xl bg-gradient-primary shadow-glow flex items-center justify-center text-primary-foreground ring-4 ring-background">
-                      <Icon className="h-6 w-6" strokeWidth={2} />
+                <div className="absolute md:left-1/2 md:-translate-x-1/2 md:top-0 left-0 top-2">
+                  <motion.div
+                    initial={reduce ? false : { scale: 0, opacity: 0 }}
+                    whileInView={reduce ? false : { scale: 1, opacity: 1 }}
+                    viewport={{ once: true, margin: "-30px" }}
+                    transition={{ duration: 0.4, delay: 0.15 + i * 0.18, type: "spring", stiffness: 200 }}
+                  >
+                    <div className="relative">
+                      <div className="absolute inset-0 rounded-2xl bg-gradient-primary blur-lg opacity-50" />
+                      <div className="relative h-16 w-16 rounded-2xl bg-gradient-primary shadow-glow flex items-center justify-center text-primary-foreground ring-4 ring-background">
+                        <Icon className="h-6 w-6" strokeWidth={2} />
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
+                  </motion.div>
+                </div>
 
                 {/* Card */}
                 <div className="rounded-2xl border border-border bg-card p-5 shadow-elegant md:text-center hover:border-primary/40 hover:shadow-glow transition-all">

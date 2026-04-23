@@ -1,7 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import AnimatedDashboard from "./AnimatedDashboard";
+import AnimatedDashboardNew from "./AnimatedDashboardNew";
 import socials from "@/lib/utils";
 
 const WHOP_URL = socials.innercirclepremium;
@@ -28,17 +28,17 @@ const Hero = () => {
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card/70 backdrop-blur px-4 py-1.5 shadow-soft">
             <span className="h-1.5 w-1.5 rounded-full bg-accent animate-ticker-pulse" />
             <span className="text-xs font-medium tracking-wide text-foreground/70">
-              Live trading community · 5,000+ members
+              Live trading community · 2,000+ members
             </span>
           </div>
 
-          <h1 className="font-display text-4xl font-extrabold leading-[1.05] sm:text-5xl lg:text-6xl xl:text-[64px] text-foreground">
-            Simplifying Your{" "}
-            <span className="text-gradient-primary">Trading Journey</span>
-          </h1>
+          <h2 className="font-display text-4xl font-extrabold leading-[1.05] sm:text-5xl lg:text-6xl xl:text-[64px] text-foreground">
+            Simplifying Your<br />
+            <span className="text-gradient-primary">Trading Journey</span> <br />
+          </h2>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Join TMTrading - Sign up and gain access to our trading mentorship platform.
+            Join INC Bootcamp - Sign up and gain access to our INC mentorship platform.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -66,7 +66,7 @@ const Hero = () => {
 
           <div className="mt-12 grid grid-cols-3 gap-6 max-w-md border-t border-border pt-6">
             <div>
-              <p className="font-display text-2xl font-extrabold text-gradient-primary">5K+</p>
+              <p className="font-display text-2xl font-extrabold text-gradient-primary">2K+</p>
               <p className="text-xs text-muted-foreground mt-1">Active members</p>
             </div>
             <div>
@@ -81,7 +81,7 @@ const Hero = () => {
         </motion.div>
 
         <div className="relative">
-          <AnimatedDashboard />
+          <AnimatedDashboardNew />
         </div>
       </div>
     </section>

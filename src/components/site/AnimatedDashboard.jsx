@@ -36,7 +36,7 @@ const AnimatedDashboard = () => {
           <div className="flex items-baseline justify-between mb-3">
             <div>
               <p className="text-xs text-muted-foreground">Today's P/L</p>
-              <p className="font-display text-2xl font-extrabold text-foreground">+$1,284.40</p>
+              <p className="font-display text-2xl font-extrabold text-foreground">+$1,285.40</p>
             </div>
             <span className="flex items-center gap-1 text-sm font-semibold text-accent">
               <ArrowUpRight className="h-4 w-4" />

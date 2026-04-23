@@ -3,10 +3,10 @@ import { Radio, GraduationCap, Waypoints, LineChart, MessagesSquare, ShieldCheck
 import Section from "./Section";
 
 const items = [
+  { icon: LineChart, title: "Clear levels + Execution", desc: "We provide clear levels along with precise entry, take profit, and stop loss points." },
   { icon: Radio, title: "Live trading", desc: "Trade with instructors in real time, every market session." },
-  { icon: GraduationCap, title: "Full bootcamp", desc: "Step-by-step paths from beginner foundations to advanced strategy." },
-  { icon: LineChart, title: "Clear levels + Execution", desc: "We provide clear supply and demand levels along with precise entry, take profit, and stop loss points." },
   { icon: Waypoints, title: "Roadmap", desc: "Follow a clear roadmap with step-by-step lessons and resources to track your progress" },
+  { icon: GraduationCap, title: "Full bootcamp", desc: "Step-by-step paths from beginner foundations to advanced strategy." },
   { icon: MessagesSquare, title: "Active community", desc: "Join our Discord full of traders sharing ideas, charts and feedback." },
   { icon: ShieldCheck, title: "24/7 Access", desc: "Access all our resources, recordings, and courses anytime, anywhere." },
 ];
@@ -16,8 +16,8 @@ const Benefits = () => {
   return (
     <Section
       id="benefits"
-      eyebrow="Benefits"
-      title="Everything you need to learn the markets"
+      eyebrow="Gains"
+      title="What you need"
       subtitle="A complete environment for learning, practicing and growing as a trader."
       center
     >
