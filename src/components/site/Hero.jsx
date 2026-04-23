@@ -38,7 +38,7 @@ const Hero = () => {
           </h2>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Join INC Bootcamp - Sign up and gain access to our INC mentorship platform.
+            Join Inner Circle Bootcamp - Sign up and gain access to our Inner Circle mentorship platform.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">

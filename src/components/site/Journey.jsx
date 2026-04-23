@@ -17,7 +17,7 @@ const Journey = () => {
     <Section
       id="journey"
       eyebrow="Your Journey"
-      title="From day one to consistent trader in the INC"
+      title="From day one to consistent trader in the Inner Circle"
       subtitle="A clear path that meets you wherever you are and takes you further."
       center
     >
