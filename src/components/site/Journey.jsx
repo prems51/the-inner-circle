@@ -7,7 +7,7 @@ const steps = [
   { n: "02", icon: Radio, title: "Sit in on live sessions", desc: "Watch live trade indices and commodities in real time." },
   { n: "03", icon: Target, title: "Build your edge", desc: "Develop your T model strategy with mentor" },
   { n: "04", icon: BookOpen, title: "Charting sessions", desc: "Weekly Sunday charting session and aslo analyzed the market for the entire week" },
-  { n: "05", icon: Rocket, title: "Build Psychology", desc: "3 to 4 Psychology classes in a week and  Full Psychology Bootcamp (20 video modules)" },
+  { n: "05", icon: Rocket, title: "Build Psychology", desc: "2 Psychology classes in a week and  Full Psychology Bootcamp (20 video modules)" },
 ];
 
 const Journey = () => {

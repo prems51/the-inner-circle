@@ -66,7 +66,7 @@ const Hero = () => {
 
           <div className="mt-12 grid grid-cols-3 gap-6 max-w-md border-t border-border pt-6">
             <div>
-              <p className="font-display text-2xl font-extrabold text-gradient-primary">2K+</p>
+              <p className="font-display text-2xl font-extrabold text-gradient-primary">2000+</p>
               <p className="text-xs text-muted-foreground mt-1">Active members</p>
             </div>
             <div>
@@ -74,7 +74,7 @@ const Hero = () => {
               <p className="text-xs text-muted-foreground mt-1">Live sessions / yr</p>
             </div>
             <div>
-              <p className="font-display text-2xl font-extrabold text-gradient-primary">4.9★</p>
+              <p className="font-display text-2xl font-extrabold text-gradient-primary">5★</p>
               <p className="text-xs text-muted-foreground mt-1">Member rating</p>
             </div>
           </div>

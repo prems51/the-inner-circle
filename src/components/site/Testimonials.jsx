@@ -1,44 +1,91 @@
 import { Star } from "lucide-react";
+import { useState } from "react";
 import Section from "./Section";
 
 const reviews = [
-  { name: "Alex P.", role: "Member · 1 yr", text: "The live sessions completely changed how I read the market. Worth every cent.", rating: 5 },
-  { name: "Maya R.", role: "Member · 8 mo", text: "I finally have a process I trust. The mentors actually trade and it shows.", rating: 5 },
-  { name: "Jordan K.", role: "Member · 2 yr", text: "The community is incredible — sharp traders, no ego, real feedback every day.", rating: 5 },
-  { name: "Sara L.", role: "Member · 6 mo", text: "Went from blowing accounts to consistent green months in under a year.", rating: 5 },
-  { name: "Rohit S.", role: "Member · 1 yr", text: "The structured courses made everything click. Best decision I've made.", rating: 5 },
-  { name: "Emma D.", role: "Member · 3 mo", text: "I love how transparent the instructors are about losses and process.", rating: 5 },
-  { name: "Liam T.", role: "Member · 9 mo", text: "Daily live trading is the secret. You see real decisions in real time.", rating: 5 },
-  { name: "Nora B.", role: "Member · 1 yr", text: "Felt at home from day one. The Discord alone is worth the membership.", rating: 5 },
+  { name: "Richard Yang", role: "Member · 1 yr", text: "I just finished my second 1on1 call, it was very informative and I learned some great information. He was very patent with me and answered all my questions. He made sure I really understood the information. I definitely plan on booking another call later on and absolutely think its worth the value. Thanks for taking the time mich", rating: 5 },
+  { name: "William Goacher", role: "Member · 8 mo", text: "Mich genuinely changed my life. I couldn't ask for a better mentor he's always there when I need guidance, and his strategy is hands down the most solid and reliable I've ever seen. If you stick to it, it will change your life too.", rating: 5 },
+  { name: "Jason", role: "Member · 2 yr", text: "This guy is genuinely a really good person. Whenever you text him, he's always there to answer your questions or offer mental support. He explains everything in detail but in a simple, easy-to-understand way. All his videos are very clear, informative, and helpful. I've learned a lot from him, and I truly appreciate his dedication and kindness.", rating: 5 },
+  { name: "Yuwri", role: "Member · 6 mo", text: "Amazing Discord!\nFrom the community, to the lessons, to the bootcamp. This guy really put the work into this.\nGuy really straight to the point and very transparent. No hidden losses, no secret strategy. Nothing.\nReally worth y'alls investment.", rating: 5 },
+  { name: "Israel Batista", role: "Member · 3 mo", text: "Michael is a really nice guy, patient and explains really well", rating: 5 },
+  { name: "Cornelis Peltola", role: "Member · 9 mo", text: "Best mentor out there.", rating: 5 },
+
 ];
 
-const Card = ({ r }) => (
-  <div className="w-[320px] sm:w-[360px] flex-shrink-0 rounded-2xl bg-card border border-border p-6 shadow-soft">
-    <div className="flex items-center gap-1 text-accent mb-3">
-      {Array.from({ length: r.rating }).map((_, i) => (
-        <Star key={i} className="h-4 w-4 fill-current" />
-      ))}
-    </div>
-    <p className="text-sm leading-relaxed text-foreground/85">"{r.text}"</p>
-    <div className="mt-5 pt-4 border-t border-border flex items-center gap-3">
-      <div className="h-9 w-9 rounded-full bg-gradient-primary text-primary-foreground flex items-center justify-center font-display text-sm font-bold">
-        {r.name.charAt(0)}
+const payouts = [
+  {
+    src: "./images/payouts/img1.webp",
+  },
+  {
+    src: "./images/payouts/img2.webp",
+  },
+  {
+    src: "./images/payouts/img3.webp",
+  },
+  {
+    src: "./images/payouts/img4.webp",
+  },
+  {
+    src: "./images/payouts/img5.webp",
+  },
+  {
+    src: "./images/payouts/img6.webp",
+  },
+]
+
+const Card = ({ r }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const words = r.text.split(" ");
+  const isLong = words.length > 15;
+  
+  const displayText = isLong && !isExpanded 
+    ? words.slice(0, 15).join(" ") + "..." 
+    : r.text;
+
+  return (
+    <div className="w-[320px] sm:w-[360px] flex-shrink-0 rounded-2xl bg-card border border-border p-6 shadow-soft flex flex-col h-full min-h-[280px]">
+      <div className="flex items-center gap-1 text-accent mb-3">
+        {Array.from({ length: r.rating }).map((_, i) => (
+          <Star key={i} className="h-4 w-4 fill-current" />
+        ))}
       </div>
-      <div>
-        <p className="font-semibold text-sm text-foreground">{r.name}</p>
-        <p className="text-xs text-muted-foreground">{r.role}</p>
+      <p className="text-sm leading-relaxed text-foreground/85 whitespace-pre-wrap flex-grow">
+        "{displayText}"
+        {isLong && (
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="text-primary hover:underline ml-2 font-medium"
+          >
+            {isExpanded ? "Read less" : "Read more"}
+          </button>
+        )}
+      </p>
+      <div className="mt-5 pt-4 border-t border-border flex items-center gap-3">
+        <div className="h-9 w-9 rounded-full bg-gradient-primary text-primary-foreground flex items-center justify-center font-display text-sm font-bold shrink-0">
+          {r.name.charAt(0)}
+        </div>
+        <div>
+          <p className="font-semibold text-sm text-foreground">{r.name}</p>
+          <p className="text-xs text-muted-foreground">{r.role}</p>
+        </div>
       </div>
     </div>
+  );
+};
+
+const PayoutCard = ({ p }) => (
+  <div className="w-[320px] sm:w-[360px] flex-shrink-0 rounded-2xl bg-card border border-border p-6 shadow-soft flex flex-col h-full min-h-[280px]">
+    <img src={p.src} className="rounded-lg object-cover h-full w-full" />
   </div>
 );
 
 const Row = ({ items, reverse = false }) => (
   <div className="marquee-pause overflow-hidden">
     <div
-      className="marquee-track flex gap-5 w-max"
+      className="marquee-track flex gap-5 w-max items-stretch"
       style={reverse ? { animationDirection: "reverse" } : undefined}
     >
-      {[...items, ...items].map((r, i) => (
+      {[...items, ...items, ...items].map((r, i) => (
         <Card key={i} r={r} />
       ))}
     </div>
@@ -46,20 +93,29 @@ const Row = ({ items, reverse = false }) => (
 );
 
 const Testimonials = () => {
-  const half = Math.ceil(reviews.length / 2);
   return (
     <Section
       id="testimonials"
       eyebrow="Member Voices"
       title="Loved by traders, every day"
-      subtitle="Real reviews from the The Inner Circle community."
+      subtitle="Real reviews and payouts from the The Inner Circle community."
       center
     >
       <div className="relative -mx-6 lg:-mx-8 space-y-5">
         <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
         <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-        <Row items={reviews.slice(0, half)} />
-        <Row items={reviews.slice(half)} reverse />
+        <Row items={reviews} />
+
+        <div className="marquee-pause overflow-hidden">
+          <div
+            className="marquee-track flex gap-5 w-max items-stretch"
+            style={{animationDirection: "reverse"}}
+          >
+            {[...payouts, ...payouts, ...payouts].map((p, i) => (
+              <PayoutCard key={i} p={p} />
+            ))}
+          </div>
+        </div>
       </div>
     </Section>
   );
