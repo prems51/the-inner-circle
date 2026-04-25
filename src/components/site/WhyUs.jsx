@@ -6,7 +6,7 @@ const others = [
   "No real-time execution",
   "Hidden losses",
   "No clear learning roadmap",
-  "Innactive community",
+  "Inactive community",
   "No psychological support",
 ];
 

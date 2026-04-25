@@ -89,8 +89,8 @@ const Footer = () => (
 
     <div className="border-t border-border">
       <div className="container-tight flex flex-col sm:flex-row items-center justify-between gap-3 py-6 text-xs text-muted-foreground">
-        <p>© {new Date().getFullYear()} The Inner Circle. Trading involves risk. Past performance is not indicative of future results.</p>
-        <p>Built for traders, by traders.</p>
+        <p>© {new Date().getFullYear()} TMT Trading. Trading involves risk. Past performance is not indicative of future results.</p>
+        <p>Designed and Developed by <a href="https://my-portfolio-alpha-three.vercel.app/" target="_blank">www.prem.com</a></p>
       </div>
     </div>
   </footer>
